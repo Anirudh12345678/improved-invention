@@ -7,7 +7,7 @@
 int hash(int key);
 bool if_found(int key);
 uint64_t* ptr;
-#define START ptr
+//#define START ptr
 
 int main(int book_no){
     ptr = (uint64_t*)calloc(SIZE, sizeof(bool));
@@ -15,8 +15,9 @@ int main(int book_no){
     printf("%p\n",*ptr);
     int x = hash(21);
     *ptr |= (0x1<<x);
+    //*ptr &= ~(0x1<<x);
     printf("%d\n",*ptr);
-    if_found(21);
+    if_found(22);
     return 1;
 }
 
